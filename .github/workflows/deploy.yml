@@ -20,3 +20,5 @@ jobs:
           args: deploy  # Použije config pro hosting z build/
         env:
           JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
+
+
