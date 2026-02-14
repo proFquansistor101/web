@@ -1,0 +1,22 @@
+name: Deploy to Juno
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: List files for debug
+        run: ls -la build/  # Ukáže soubory v build/ (pro logs)
+
+      - name: Deploy to Juno
+        uses: junobuild/juno-action@main
+        with:
+          args: deploy  # Použije config pro hosting z build/
+        env:
+          JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
