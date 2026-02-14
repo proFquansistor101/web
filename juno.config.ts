@@ -8,3 +8,4 @@ export default defineConfig({
     source: "build"  // Nahraje soubory z build/ složky
   }
 });
+
